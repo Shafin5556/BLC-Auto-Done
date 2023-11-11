@@ -1,0 +1,153 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BLC Auto Done</title>
+    <style>
+        #instructionLabel {
+            display: none;
+            color: red;
+        }
+
+        body {
+            background-color: #212121;
+            font-family: 'Arial', sans-serif;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 150px;
+            height: 50px;
+        }
+
+        button {
+            width: 10em;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 3.5em;
+            border: 3px ridge #149CEA;
+            outline: none;
+            background-color: transparent;
+            color: white;
+            transition: 1s;
+            border-radius: 0.3em;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        button::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 3%;
+            width: 95%;
+            height: 40%;
+            background-color: #212121;
+            transition: 0.5s;
+            transform-origin: center;
+        }
+
+        button::before {
+            content: "";
+            transform-origin: center;
+            position: absolute;
+            top: 80%;
+            left: 3%;
+            width: 95%;
+            height: 40%;
+            background-color: #212121;
+            transition: 0.5s;
+        }
+
+        button:hover::before,
+        button:hover::after {
+            transform: scale(0)
+        }
+
+        button:hover {
+            box-shadow: inset 0px 0px 25px #1479EA;
+        }
+
+
+        .card {
+            overflow: hidden;
+            position: relative;
+            background-color: #212121;
+            text-align: left;
+            border-radius: 0.5rem;
+            max-width: 290px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .header {
+            padding: 1.25rem 1rem 1rem 1rem;
+            background-color: #212121;
+        }
+
+        .image {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+        }
+
+        .image svg {
+            color: #DC2626;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .content {
+            margin-top: 0.75rem;
+            text-align: center;
+        }
+
+        .title {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5rem;
+        }
+
+        .message {
+            margin-top: 0.5rem;
+            color: white;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="doneButton" style="display: none;">Auto Done</button>
+
+    <div class="card" id="instructionLabel">
+        <div class="header">
+            <div class="image"><svg aria-hidden="true" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                    fill="none">
+                    <path
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                        stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg></div>
+            <div class="content">
+                <span class="title">Opps Course Not Found</span>
+                <p class="message">Open your specific course and refresh again.</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

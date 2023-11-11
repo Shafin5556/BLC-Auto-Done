@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "BLC Auto Done",
+    "version": "1.0",
+    "description": "Description of your extension",
+    "action": {
+        "default_icon": {
+            "16": "BLC logo mini.png",
+            "48": "BLC logo mini.png",
+            "128": "BLC logo mini.png"
+          },
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "activeTab"
+      
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
